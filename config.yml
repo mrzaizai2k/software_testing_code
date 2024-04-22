@@ -1,0 +1,9 @@
+driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+username: admin 
+password: sandbox
+
+case1:
+    age: 12
+    height: 180
+    weight: 65
+    gender: female
