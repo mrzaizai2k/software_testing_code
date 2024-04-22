@@ -33,6 +33,10 @@ driver.get("https://www.calculator.net/bmi-calculator.html")
 time.sleep(1)
 
 def input_values(driver, config):
+    metric_link = driver.find_element(By.XPATH, '//a[contains(text(), "Metric Units")]')
+    metric_link.click()
+
+
     age_input = driver.find_element(By.ID, 'cage')
     age_input.clear()
     age_input.send_keys(config['age'])
@@ -58,14 +62,19 @@ def input_values(driver, config):
         print("Invalid gender specified in config")
 
 
-metric_link = driver.find_element(By.XPATH, '//a[contains(text(), "Metric Units")]')
-metric_link.click()
+    # Click on the "Calculate" button
+    calculate_button = driver.find_element(By.XPATH, '//input[@value="Calculate"]')
+    calculate_button.click()
 
-input_values(driver, config['case1'])
+for i in range(4):
+    try:
+        print(f'Test for case{i+1}')
+        input_values(driver, config[f'case{i+1}'])
+        time.sleep(2)
+    except Exception as e:
+        print(f"error: {e}")
+    
 
-# Click on the "Calculate" button
-calculate_button = driver.find_element(By.XPATH, '//input[@value="Calculate"]')
-calculate_button.click()
 
 time.sleep(10)
 # Close the browser window

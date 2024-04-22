@@ -7,3 +7,27 @@ case1:
     height: 180
     weight: 65
     gender: female
+
+case2:
+    age: 2
+    height: 180
+    weight: 70
+    gender: female
+
+case3:
+    age: 0
+    height: 180
+    weight: 70
+    gender: female
+
+case4:
+    age: 120
+    height: 180
+    weight: 65
+    gender: female
+
+case5:
+    age: 130
+    height: 180
+    weight: 65
+    gender: female
