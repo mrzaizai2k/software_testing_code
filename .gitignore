@@ -161,4 +161,4 @@ cython_debug/
 *.zip
 .venv/
 chromedriver-mac-x64/
-chromedriver-win64/
+# chromedriver-win64/
