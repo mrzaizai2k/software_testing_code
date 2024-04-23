@@ -1,33 +1,133 @@
-driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
-username: admin 
-password: sandbox
+driver_path: msedgedriver.exe
+# driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
-case1:
-    age: 12
-    height: 180
-    weight: 65
-    gender: female
+BMI_test:
+    TC-001-001:
+        age: 20
+        height: 170
+        weight: 60
+        gender: male
 
-case2:
-    age: 2
-    height: 180
-    weight: 70
-    gender: female
+        bmi_value: 20.8
+        status: Healthy weight
 
-case3:
-    age: 0
-    height: 180
-    weight: 70
-    gender: female
+    TC-001-002:
+        age: 30
+        height: 160
+        weight: 55
+        gender: female
 
-case4:
-    age: 120
-    height: 180
-    weight: 65
-    gender: female
+        bmi_value: 21.5
+        status: Normal
 
-case5:
-    age: 130
-    height: 180
-    weight: 65
-    gender: female
+    TC-002-002:
+        age: 1
+        height: 180
+        weight: 80
+        gender: male
+
+    TC-002-003:
+        age: 121
+        height: 180
+        weight: 80
+        gender: male
+
+    TC-002-004:
+        age: 119
+        height: 180
+        weight: 80
+        gender: male
+
+        bmi_value: 24.7
+        status: Normal
+
+    TC-002-005:
+        age: 3
+        height: 180
+        weight: 80
+        gender: male
+
+        bmi_value: 24.7
+        status: Overweight
+
+    TC-003-001:
+        age: 80
+        height: 180
+        weight: 0
+        gender: male
+
+
+
+Body_fat_test:
+    TC-002-001:
+        age: 23
+        height: 182
+        weight: 71
+        gender: male
+        neck: 34
+        waist: 80
+
+        body_fat: 15.0
+
+
+    TC-002-002:
+        age: -1
+        height: -1
+        weight: -1
+        gender: male
+        neck: -1
+        waist: -1
+
+    TC-002-003:
+        age: Null
+        height: Null
+        weight: Null
+        gender: male
+        neck: Null
+        waist: Null
+
+    TC-002-004:
+        age: 25
+        height: 175
+        weight: 75
+        gender: male
+        neck: Null
+        waist: Null
+
+    TC-002-002_2:
+        age: 70
+        height: 155
+        weight: 60
+        gender: female
+        neck: Null
+        waist: Null
+
+    TC-002-003_2:
+        age: 0
+        height: 140
+        weight: 80
+        gender: male
+        neck: Null
+        waist: Null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
