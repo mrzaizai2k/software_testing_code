@@ -26,7 +26,7 @@ Web automation testing là 1 dự án dựa trên các list test case trong bài
 - Body_fat test: https://www.calculator.net/body-fat-calculator.html
 
 Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề, thầy có thể liên lạc với em thông qua:
-- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
+- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): https://youtu.be/0Hyueac8eHA
 - Email: chibao24.12.1999@gmail.com
 - Github: https://github.com/mrzaizai2k/software_testing_code
 
@@ -325,7 +325,7 @@ Sau khi chạy file thì các test case đã được thực hiện và cho ra k
 # Tài liệu
 - Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
 - Github: https://github.com/mrzaizai2k/software_testing_code
-- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
+- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): https://youtu.be/0Hyueac8eHA
 
 # Tài liệu tham khảo
 - https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
