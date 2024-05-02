@@ -77,8 +77,216 @@ Tiếp theo phần mềm sẽ mở đường dẫn Body_fat_url để thực hi�
 
 Toàn bộ đoạn code được chạy trên python dùng tool Selenium
 
+Đoạn code được chạy tối đa 3 lần thử, phòng trường hợp có sự cố mạng xảy ra. Sau mỗi lần test phần mềm sẽ chờ từ 2 - 5 s để đảm bảo đường link và các thành phần web đã hiển thị nhằm mục đích đảm bảo hoạt động  
+
 
 # Mô tả test case
 
+Vì lí do bài project 2 em có sử dụng moodle login, và đồng thời server của moodle bị giật lag, không đảm bảo nên em xin phép được làm project 3 sử dụng 2 application tại BMI_url: https://www.calculator.net/bmi-calculator.html cho việc test data ở trang BMI và tại Body_fat_url: https://www.calculator.net/body-fat-calculator.html cho việc test tại trang tính Body Fat
+Các test case được mô tả chi tiết tại file ./docs/Group2-proj3-testcase.xlsm. 
+Ở trang BMI sẽ có tổng cộng 8 test case như sau:
+
+TC-001-001:
+
+    # Input
+    age: 20
+    height: 170
+    weight: 60
+    gender: male
+
+    # Expected
+    bmi_value: 20.8
+    status: Healthy weight
+
+TC-001-002:
+
+    # Input
+    age: 30
+    height: 160
+    weight: 55
+    gender: female
+
+    # Expected
+    bmi_value: 21.5
+    status: Normal
+
+TC-001-003:
+
+    # Input
+    age: 1
+    height: 180
+    weight: 80
+    gender: male
+
+    # Expected
+    bmi_value: Null
+    age_error: Please provide an age between 2 and 120.
+
+
+
+TC-001-004:
+
+    # Input
+    age: 121
+    height: 180
+    weight: 80
+    gender: male
+
+    # Expected
+    bmi_value: Null
+    age_error: Please provide an age between 2 and 120.
+
+
+
+TC-001-005:
+
+    # Input
+    age: 80
+    height: 180
+    weight: 80
+    gender: male
+
+    # Expected
+    bmi_value: 24.7
+    status: Normal
+
+TC-001-006:
+
+    # Input
+    age: 119
+    height: 180
+    weight: 80
+    gender: male
+
+    # Expected
+    bmi_value: 24.7
+    status: Normal
+
+TC-001-007:
+
+    # Input
+    age: 3
+    height: 180
+    weight: 80
+    gender: male
+
+    # Expected
+    bmi_value: 24.7
+    status: Overweight
+
+TC-001-008:
+
+    # Input
+    age: 80
+    height: 180
+    weight: 0
+    gender: male
+
+    # Expected
+    bmi_value: Null
+    weight_error: Please provide positive weight value.
+
+Ở trang Body Fat sẽ có tổng cộng 6 test case như sau
+
+TC-002-001:
+
+    # Input
+    age: 23
+    height: 182
+    weight: 71
+    gender: male
+    neck: 34
+    waist: 80
+
+    # Expected
+    body_fat: 15.0
+    
+
+
+TC-002-002:
+
+    # Input
+    age: -1
+    height: -1
+    weight: -1
+    gender: male
+    neck: -1
+    waist: -1
+
+    # Expected
+    body_fat: Null
+    age_error: Please provide a positive age.
+    height_error: Height need to be positive.
+    weight_error: Please provide a positive weight.
+    neck_error: Neck need to be numeric.
+    waist_error: Waist need to be numeric.
+
+TC-002-003:
+
+    # Input
+    age: Null
+    height: Null
+    weight: Null
+    gender: male
+    neck: Null
+    waist: Null
+
+    # Expected
+    body_fat: Null
+    age_error: Please provide a positive age.
+    height_error: Height need to be positive.
+    weight_error: Please provide a positive weight.
+    neck_error: Neck need to be numeric.
+    waist_error: Waist need to be numeric.
+
+TC-002-004:
+
+    # Input
+    age: 25
+    height: 175
+    weight: 75
+    gender: male
+    neck: Null
+    waist: Null
+
+    # Expected
+    body_fat: Null
+    neck_error: Neck need to be numeric.
+    waist_error: Waist need to be numeric.
+
+
+TC-002-005:
+
+    # Input
+    age: 70
+    height: 155
+    weight: 60
+    gender: female   
+    neck: Null
+    waist: Null
+
+    # Expected
+    body_fat: Null
+    neck_error: Neck need to be numeric.
+    waist_error: Waist need to be numeric.
+
+
+TC-002-006:
+
+    # Input
+    age: 0
+    height: 140
+    weight: 80
+    gender: male
+    neck: Null
+    waist: Null
+
+    # Expected
+    body_fat: Null
+    neck_error: Neck need to be numeric.
+    waist_error: Waist need to be numeric.
+    
 # Kết quả thực hiện
-- Mô tả kết quả, đã check như thế nào
+
+Sau khi chạy file thì các test case đã được thực hiện và cho ra kết quả tốt
+
