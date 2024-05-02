@@ -296,3 +296,12 @@ TC-002-006:
 
 Sau khi chạy file thì các test case đã được thực hiện và cho ra kết quả tốt
 
+# Tài liệu
+Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
+Github: 
+Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): 
+# Tài liệu tham khảo
+https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
+https://viblo.asia/p/tim-hieu-testing-web-automation-voi-selenium-webdriver-va-python-Qbq5Q46RlD8
+
+
