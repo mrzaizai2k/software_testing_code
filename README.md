@@ -17,6 +17,15 @@ Report
 - Show the way to apply the tool to test your application.
 - Show the test results
 
+# Mô tả tổng quan
+
+Web automation testing là 1 dự án dựa trên các list test case trong bài project 2 và phát triển lên thành web automation testing. Ở bài project 2 em test trên web moodle, Tuy nhiên, vì server yếu, chậm và dễ sập nên em xin phép test trên 2 ứng dụng khác theo như project 2 mà nhóm đã làm, chi tiết ở filr ./docs/Group2-proj3-testcase.xlsm. 
+2 test bao gồm:
+
+- BMI test: https://www.calculator.net/bmi-calculator.html
+- Body_fat test: https://www.calculator.net/body-fat-calculator.html
+
+
 # Yêu cầu cài đặt
 
 OS: Window 10/11
