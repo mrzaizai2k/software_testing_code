@@ -1,8 +1,7 @@
-# driver_path: msedgedriver.exe
-driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 # driver_path: ./msedgedriver.exe
-# driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
+BMI_url: https://www.calculator.net/bmi-calculator.html
 BMI_test:
     TC-001-001:
         age: 20
@@ -10,6 +9,7 @@ BMI_test:
         weight: 60
         gender: male
 
+        # Expected
         bmi_value: 20.8
         status: Healthy weight
 
@@ -19,6 +19,7 @@ BMI_test:
         weight: 55
         gender: female
 
+        # Expected
         bmi_value: 21.5
         status: Normal
 
@@ -28,7 +29,11 @@ BMI_test:
         weight: 80
         gender: male
 
+        # Expected
         bmi_value: Null
+        age_error: Please provide an age between 2 and 120.
+
+
 
     TC-001-004:
         age: 121
@@ -36,7 +41,10 @@ BMI_test:
         weight: 80
         gender: male
 
+        # Expected
         bmi_value: Null
+        age_error: Please provide an age between 2 and 120.
+
 
 
     TC-001-005:
@@ -45,6 +53,7 @@ BMI_test:
         weight: 80
         gender: male
 
+        # Expected
         bmi_value: 24.7
         status: Normal
 
@@ -54,6 +63,7 @@ BMI_test:
         weight: 80
         gender: male
 
+        # Expected
         bmi_value: 24.7
         status: Normal
 
@@ -63,6 +73,7 @@ BMI_test:
         weight: 80
         gender: male
 
+        # Expected
         bmi_value: 24.7
         status: Overweight
 
@@ -72,11 +83,13 @@ BMI_test:
         weight: 0
         gender: male
 
+        # Expected
         bmi_value: Null
+        weight_error: Please provide positive weight value.
 
 
 
-
+Body_fat_url: https://www.calculator.net/body-fat-calculator.html
 Body_fat_test:
     TC-002-001:
         age: 23
@@ -86,7 +99,9 @@ Body_fat_test:
         neck: 34
         waist: 80
 
+        # Expected
         body_fat: 15.0
+        
 
 
     TC-002-002:
@@ -97,7 +112,13 @@ Body_fat_test:
         neck: -1
         waist: -1
 
+        # Expected
         body_fat: Null
+        age_error: Please provide a positive age.
+        height_error: Height need to be positive.
+        weight_error: Please provide a positive weight.
+        neck_error: Neck need to be numeric.
+        waist_error: Waist need to be numeric.
 
     TC-002-003:
         age: Null
@@ -107,7 +128,13 @@ Body_fat_test:
         neck: Null
         waist: Null
 
+        # Expected
         body_fat: Null
+        age_error: Please provide a positive age.
+        height_error: Height need to be positive.
+        weight_error: Please provide a positive weight.
+        neck_error: Neck need to be numeric.
+        waist_error: Waist need to be numeric.
 
     TC-002-004:
         age: 25
@@ -117,7 +144,10 @@ Body_fat_test:
         neck: Null
         waist: Null
 
+        # Expected
         body_fat: Null
+        neck_error: Neck need to be numeric.
+        waist_error: Waist need to be numeric.
 
 
     TC-002-005:
@@ -128,7 +158,10 @@ Body_fat_test:
         neck: Null
         waist: Null
 
+        # Expected
         body_fat: Null
+        neck_error: Neck need to be numeric.
+        waist_error: Waist need to be numeric.
 
 
     TC-002-006:
@@ -139,10 +172,10 @@ Body_fat_test:
         neck: Null
         waist: Null
 
+        # Expected
         body_fat: Null
-
-
-
+        neck_error: Neck need to be numeric.
+        waist_error: Waist need to be numeric.
 
 
 
