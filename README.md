@@ -70,6 +70,14 @@ File config chứa
 
 ## Diễn tả file chạy
 
+File auto_test.py sẽ thực hiện chạy tuần tự như sau:
+Đầu tiên file sẽ mở đường dẫn BMI_url để thực hiện test các test case cho BMI. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết qủa đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
+
+Tiếp theo phần mềm sẽ mở đường dẫn Body_fat_url để thực hiện test các test case cho body fat. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết qủa đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
+
+Toàn bộ đoạn code được chạy trên python dùng tool Selenium
+
+
 # Mô tả test case
 
 # Kết quả thực hiện
