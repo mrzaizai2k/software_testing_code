@@ -1,5 +1,6 @@
-driver_path: ./msedgedriver.exe
-# driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+# driver_path: ./msedgedriver.exe
+driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+chromedriver-mac-x64/chromedriver-mac-x64/chromedriver
 
 BMI_url: https://www.calculator.net/bmi-calculator.html
 BMI_test:
