@@ -31,6 +31,12 @@ Sau đó cài đặt thư viện theo lệnh
 
 - ```pip install -r setup.txt```
 
+Thư viện gồm:
+- selenium==4.19.0
+- pandas==1.5.3
+- numpy==1.23.5
+- PyYAML==6.0
+
 Thay đổi đường dẫn trong file config.yaml: 
     driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
