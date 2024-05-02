@@ -1,6 +1,6 @@
 # driver_path: msedgedriver.exe
 driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
-driver_path: ./msedgedriver.exe
+# driver_path: ./msedgedriver.exe
 # driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
 BMI_test:
