@@ -25,6 +25,11 @@ Web automation testing là 1 dự án dựa trên các list test case trong bài
 - BMI test: https://www.calculator.net/bmi-calculator.html
 - Body_fat test: https://www.calculator.net/body-fat-calculator.html
 
+Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề, thầy có thể liên lạc với em thông qua:
+- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
+- Email: chibao24.12.1999@gmail.com
+- Github: https://github.com/mrzaizai2k/software_testing_code
+
 
 # Yêu cầu cài đặt
 
@@ -321,9 +326,6 @@ Sau khi chạy file thì các test case đã được thực hiện và cho ra k
 - Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
 - Github: https://github.com/mrzaizai2k/software_testing_code
 - Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
-
-# Tài liệu tham khảo 
-
 
 # Tài liệu tham khảo
 - https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
