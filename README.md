@@ -21,37 +21,54 @@ Report
 
 OS: Window 10/11
 Anaconda: Để cài đặt thư viện. Nếu đã có anaconda thầy có thể cài python bằng lệnh:
-    ```conda init```
-    ```conda activate```
-    ```conda create -n auto_test python=3.12.2 -y``` 
-    ```conda activate auto_test```
+- ```conda init```
+- ```conda activate```
+- ```conda create -n auto_test python=3.12.2 -y```
+- ```conda activate auto_test```
 
 Python 3.12.2 hoặc 3.10.9
 Sau đó cài đặt thư viện theo lệnh
-    ```pip install -r setup.txt```
+
+- ```pip install -r setup.txt```
 
 Thay đổi đường dẫn trong file config.yaml: 
     driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
 OS: Mac
 
-    Cũng làm các bước tương tụ như trên, nhưng thầy cần thay đổi đường dẫn trong file config.yaml
-    driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+Cũng làm các bước tương tụ như trên, nhưng thầy cần thay đổi đường dẫn trong file config.yaml
+    
+- driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
-Trong trường hợp chrome drive không trùng với bản chrome của thầy, thầy vui lòng tải bản chrome drive tại link cho đúng phiên bản. Đồng thời thay đổi đường dẫn trong file config.yaml
+Trong trường hợp chrome drive không trùng với bản chrome của thầy
+- Thầy vui lòng tải bản chrome drive tại link https://googlechromelabs.github.io/chrome-for-testing/ cho đúng phiên bản.
+- Giải nén file và đưa vào thư mục làm việc
+- Thay đổi đường dẫn trong file config.yaml thành đường dẫn đến file driver
 
 
 # Cách sử dụng
 
 Sau khi cài đặt môi trường cần thiết. Chúng ta cần cd vào thư mục đang hoạt động. và dùng lệnh:
-    ```python auto_test.py```
+
+- ```python auto_test.py```
 
 Câu lệnh này sẽ thực hiện chạy test tự động và đưa ra kết quả trên cmd
 
 
 # Mô tả phần mềm
- - Diễn tả file config
- - Diễn tả file chạy
+## Mô tả file config 
+
+File config chứa 
+- driver_path: Là đường dẫn tương đối đến file chrome driver (driver phải compatible với phiên bản chrome đang sử dụng)
+- BMI_url: https://www.calculator.net/bmi-calculator.html: Là đường dẫn đến trang web để test BMI
+- Body_fat_url: https://www.calculator.net/body-fat-calculator.html: Là đường dẫn đến trang web để test Body fat
+- BMI_test: Chứa các test case cho việc test BMI.
+- TC-001-XXX: Mã cho test case của bài test BMI. Chứa data input và expected output cho test case
+- Body_fat_test: Chứa các test case cho việc test Body fat.
+- TC-002-XXX: Mã cho test case của bài test Body fat. Chứa data input và expected output cho test case
+
+
+## Diễn tả file chạy
 
 # Mô tả test case
 
