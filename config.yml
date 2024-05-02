@@ -1,5 +1,7 @@
 # driver_path: msedgedriver.exe
 driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+driver_path: ./msedgedriver.exe
+# driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
 BMI_test:
     TC-001-001:
@@ -20,19 +22,33 @@ BMI_test:
         bmi_value: 21.5
         status: Normal
 
-    TC-002-002:
+    TC-001-003:
         age: 1
         height: 180
         weight: 80
         gender: male
 
-    TC-002-003:
+        bmi_value: Null
+
+    TC-001-004:
         age: 121
         height: 180
         weight: 80
         gender: male
 
-    TC-002-004:
+        bmi_value: Null
+
+
+    TC-001-005:
+        age: 80
+        height: 180
+        weight: 80
+        gender: male
+
+        bmi_value: 24.7
+        status: Normal
+
+    TC-001-006:
         age: 119
         height: 180
         weight: 80
@@ -41,7 +57,7 @@ BMI_test:
         bmi_value: 24.7
         status: Normal
 
-    TC-002-005:
+    TC-001-007:
         age: 3
         height: 180
         weight: 80
@@ -50,11 +66,14 @@ BMI_test:
         bmi_value: 24.7
         status: Overweight
 
-    TC-003-001:
+    TC-001-008:
         age: 80
         height: 180
         weight: 0
         gender: male
+
+        bmi_value: Null
+
 
 
 
@@ -78,6 +97,8 @@ Body_fat_test:
         neck: -1
         waist: -1
 
+        body_fat: Null
+
     TC-002-003:
         age: Null
         height: Null
@@ -85,6 +106,8 @@ Body_fat_test:
         gender: male
         neck: Null
         waist: Null
+
+        body_fat: Null
 
     TC-002-004:
         age: 25
@@ -94,21 +117,33 @@ Body_fat_test:
         neck: Null
         waist: Null
 
-    TC-002-002_2:
+        body_fat: Null
+
+
+    TC-002-005:
         age: 70
         height: 155
         weight: 60
-        gender: female
+        gender: female   
         neck: Null
         waist: Null
 
-    TC-002-003_2:
+        body_fat: Null
+
+
+    TC-002-006:
         age: 0
         height: 140
         weight: 80
         gender: male
         neck: Null
         waist: Null
+
+        body_fat: Null
+
+
+
+
 
 
 
