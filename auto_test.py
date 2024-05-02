@@ -16,6 +16,9 @@ def initialize_driver(driver_path, browser_options):
         driver = webdriver.Chrome(service=webdriver_service, options=browser_options)
     except:
         driver = webdriver.Edge(service=webdriver_service)
+    finally:
+        driver = webdriver.Chrome()
+    
     return driver, webdriver_service
 
 config = read_config(path = "config.yml")
