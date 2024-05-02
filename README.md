@@ -90,7 +90,10 @@ Toàn bộ đoạn code được chạy trên python dùng tool Selenium
 
 Vì lí do bài project 2 em có sử dụng moodle login, và đồng thời server của moodle bị giật lag, không đảm bảo nên em xin phép được làm project 3 sử dụng 2 application tại BMI_url: https://www.calculator.net/bmi-calculator.html cho việc test data ở trang BMI và tại Body_fat_url: https://www.calculator.net/body-fat-calculator.html cho việc test tại trang tính Body Fat
 Các test case được mô tả chi tiết tại file ./docs/Group2-proj3-testcase.xlsm. 
-Ở trang BMI sẽ có tổng cộng 8 test case như sau:
+
+Ở trang BMI sẽ có tổng cộng 8 test case như sau, nếu trong phần Expected chỉ có bmi_value và status thì test case đó đang test trường hợp thành công và em sẽ so sánh kết quả BMI đó với expected value nằm trong output, Ở các test case có bmi_value == Null và có error là đang test các trường hợp thất bại, lúc này trang web sẽ báo lỗi và em sẽ so sánh lỗi xem có đúng với expected output không:
+
+Ví dụ ở TC-001-001, phần Expected output có bmi_value: 20.8, status: Healthy weight em sẽ kiểm tra kết quả sau khi nhấn nút Calculate có hiện giá trị bmi_value: 20.8 và status: Healthy weight không. Còn ở TC-001-003 phần Expected output có bmi_value: Null và age_error: Please provide an age between 2 and 120. Em sẽ check kết quả sau khi nhấn nút Calculate, trang web có hiển thị lỗi "Please provide an age between 2 and 120" và không hiển thị kết quả BMI hay không
 
 TC-001-001:
 
@@ -192,7 +195,9 @@ TC-001-008:
     bmi_value: Null
     weight_error: Please provide positive weight value.
 
-Ở trang Body Fat sẽ có tổng cộng 6 test case như sau
+Ở trang Body Fat sẽ có tổng cộng 6 test case như sau, nếu trong phần Expected chỉ có body_fat thì test case đó đang test trường hợp thành công và em sẽ so sánh kết quả Body Fat đó với expected value nằm trong output, Ở các test case có body_fat == Null và có error là đang test các trường hợp thất bại, lúc này trang web sẽ báo lỗi và em sẽ so sánh lỗi xem có đúng với expected output không:
+
+Ví dụ ở TC-002-001, phần Expected output có body_fat: 15.0 em sẽ kiểm tra kết quả sau khi nhấn nút Calculate có hiện giá trị body_fat: 15.0 không. Còn ở TC-002-004 phần Expected output có body_fat: Null, neck_error: Neck need to be numeric., waist_error: Waist need to be numeric.. Em sẽ check kết quả sau khi nhấn nút Calculate, trang web có hiển thị 2 lỗi "Neck need to be numeric.", "Waist need to be numeric." và không hiển thị kết quả Body Fat hay không
 
 TC-002-001:
 
@@ -297,11 +302,12 @@ TC-002-006:
 Sau khi chạy file thì các test case đã được thực hiện và cho ra kết quả tốt
 
 # Tài liệu
-Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
-Github: 
-Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): 
+- Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
+- Github: https://github.com/mrzaizai2k/software_testing_code
+- Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
+- 
 # Tài liệu tham khảo
-https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
-https://viblo.asia/p/tim-hieu-testing-web-automation-voi-selenium-webdriver-va-python-Qbq5Q46RlD8
+- https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
+- https://viblo.asia/p/tim-hieu-testing-web-automation-voi-selenium-webdriver-va-python-Qbq5Q46RlD8
 
 
