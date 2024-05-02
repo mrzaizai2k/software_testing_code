@@ -14,11 +14,14 @@ def initialize_driver(driver_path, browser_options):
     webdriver_service = Service(driver_path)
     try:
         driver = webdriver.Chrome(service=webdriver_service, options=browser_options)
-    except:
-        driver = webdriver.Edge(service=webdriver_service)
-    finally:
-        driver = webdriver.Chrome()
-    
+    except Exception as e:
+        print('Driver error', e)
+        try: 
+            driver = webdriver.Chrome()
+        except Exception as e:
+            print('Driver error', e)
+            driver = webdriver.Edge(service=webdriver_service)
+
     return driver, webdriver_service
 
 config = read_config(path = "config.yml")
