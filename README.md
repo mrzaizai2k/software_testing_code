@@ -1,22 +1,6 @@
 # software_testing_code
 Code for software testing automation
 
-Vì trang moodle load chập chờn nên em xin phép thầy cho em test ở link này ạ
-https://www.calculator.net/bmi-calculator.html
-
-Learn Selenium
-Level 0: re-test all test cases in proj#2 using Selenium IDE. Note that, at the end of each test case recording, you need to "verify" the expected output.
-Level 1: data-driven test for test cases in proj#2 using Selenium Driver (using any programming languages supported by Selenium) - test inputs and exepected outputs are in data files
-Leve 2: (bonus) Level 1 and web items are in data files.
-
-For group, who tested a real application that needs your/tester's user name and password, you may need to change the testing application, Or, if you want to update your test cases, please describe clearly in the report.
-
-Report
-- Report file type: .pdf and .xls(x) and source of the code(s).
-- Review the tool with a short description how to use the tool.
-- Show the way to apply the tool to test your application.
-- Show the test results
-
 # Mô tả tổng quan
 
 Web automation testing là 1 dự án dựa trên các list test case trong bài project 2 và phát triển lên thành web automation testing. Ở bài project 2 em test trên web moodle. Tuy nhiên, vì server yếu, chậm và dễ sập nên em xin phép test trên 2 ứng dụng khác theo như project 2 mà nhóm đã làm, chi tiết ở file ./docs/Group2-proj3-testcase.xlsm. 
