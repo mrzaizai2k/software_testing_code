@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 from utils import *
 
+
 # Path to your ChromeDriver executable
 def initialize_driver(driver_path, browser_options):
     webdriver_service = Service(driver_path)
@@ -29,7 +30,7 @@ driver, webdriver_service = initialize_driver(driver_path, browser_options)
 
 
 # Open the URL in the Chrome browser
-driver.get("https://www.calculator.net/bmi-calculator.html")
+driver.get(config['BMI_url'])
 
 time.sleep(1)
 
@@ -60,7 +61,7 @@ def check_result_BMI(driver, config):
         return False 
 
 
-def check_age_error(driver, config):
+def check_age_error(driver, config, error = "Please provide an age between 2 and 120."):
     # Validate age
     age = config['age']  # Default to 0 if 'age' key is missing
     
@@ -72,7 +73,7 @@ def check_age_error(driver, config):
     time.sleep(1)  # Wait for the error message to potentially load
     try:
         error_message = driver.find_element(By.XPATH, "//div[font[@color='red']]")
-        if "Please provide an age between 2 and 120." in error_message.text:
+        if error.strip() in error_message.text:
             return True
         else:
             return False
@@ -85,7 +86,7 @@ def check_height_error(driver, config, error = "Please provide positive height v
     try:
         error_messages = driver.find_elements(By.XPATH, "//font[@color='red']")
         for message in error_messages:
-            if error == message.text:
+            if error.strip() == message.text:
                 return True
         return False
     except:
@@ -100,7 +101,7 @@ def check_weight_error(driver, config, error="Please provide positive weight val
         # Find all error message elements
         error_messages = driver.find_elements(By.XPATH, "//font[@color='red']")
         for message in error_messages:
-            if error == message.text:
+            if error.strip() == message.text:
                 return True
         return False
     except Exception as e:
@@ -127,7 +128,7 @@ def check_waist_error(driver, config, error = "Waist need to be numeric."):
     try:
         error_messages = driver.find_elements(By.XPATH, "//font[@color='red']")
         for message in error_messages:
-            if error == message.text:
+            if error.strip() == message.text:
                 return True
         return False
     except:
@@ -186,15 +187,15 @@ def input_values_BMI(driver, config):
             calculate_button.click()
 
             if config['age'] < 2 or config['age'] > 120:
-                age_flag = check_age_error(driver, config)
+                age_flag = check_age_error(driver, config, error=config['age_error'])
                 print("age_flag", age_flag)
 
             if config['height'] <= 0:
-                height_flag = check_height_error(driver, config)
+                height_flag = check_height_error(driver, config, error=config['height_error'])
                 print("height_flag", height_flag)
 
             if config['weight'] <= 0:
-                weight_flag = check_weight_error(driver, config)
+                weight_flag = check_weight_error(driver, config, error=config['weight_error'])
                 print("weight_flag", weight_flag)
 
             if config['bmi_value'] is not None:
@@ -213,8 +214,6 @@ def input_values_BMI(driver, config):
                     print("Retrying after 5 seconds...")
                     time.sleep(5)
         
-
-
 for test_case in config['BMI_test']:
     try:
         print(f'*********************')
@@ -247,7 +246,7 @@ def check_result_body_fat(driver, config):
         return False
 
 
-def check_age_error_body(driver, config):
+def check_age_error_body(driver, config, error = "Please provide a positive age."):
     # Validate age
     age = config['age']  # Default to 0 if 'age' key is missing
     if (config['age'] is not None and config['age'] < 0) or config['age'] is None:
@@ -255,7 +254,7 @@ def check_age_error_body(driver, config):
         time.sleep(1)  # Wait for the error message to potentially load
         try:
             error_message = driver.find_element(By.XPATH, "//div[font[@color='red']]")
-            if "Please provide a positive age." in error_message.text:
+            if error.strip() in error_message.text:
                 return True
             else:
                 return False
@@ -327,23 +326,23 @@ def input_values_body_fat(driver, config):
             calculate_button.click()
 
             if (config['age'] is not None and config['age'] < 0) or config['age'] is None:
-                age_flag = check_age_error_body(driver, config)
+                age_flag = check_age_error_body(driver, config, error=config['age_error'])
                 print("age_flag", age_flag)
 
             if (config['height'] is not None and config['height'] < 0) or config['height'] is None:
-                height_flag = check_height_error(driver, config, error = "Height need to be positive.")
+                height_flag = check_height_error(driver, config, error = config['height_error'])
                 print("height_flag", height_flag)
 
             if (config['weight'] is not None and config['weight'] < 0) or config['weight'] is None:
-                weight_flag = check_weight_error(driver, config, error = "Please provide a positive weight.")
+                weight_flag = check_weight_error(driver, config, error =config['weight_error'])
                 print("weight_flag", weight_flag)
 
             if (config['neck'] is not None and config['neck'] < 0) or config['neck'] is None:
-                neck_flag = check_weight_error(driver, config, error = "Neck need to be numeric.")
+                neck_flag = check_weight_error(driver, config, error = config['neck_error'])
                 print("neck_flag", neck_flag)
 
             if (config['waist'] is not None and config['waist'] < 0) or config['waist'] is None:
-                waist_flag = check_waist_error(driver, config, error = "Waist need to be numeric.")
+                waist_flag = check_waist_error(driver, config, error = config['waist_error'])
                 print("waist_flag", waist_flag)
 
             if config['body_fat'] is not None:
@@ -365,7 +364,7 @@ def input_values_body_fat(driver, config):
                 time.sleep(5)
 
 
-driver.get("https://www.calculator.net/body-fat-calculator.html")
+driver.get(config['Body_fat_url'])
 
 time.sleep(1)
 for test_case in config['Body_fat_test']:
