@@ -19,8 +19,8 @@ Report
 
 # Mô tả tổng quan
 
-Web automation testing là 1 dự án dựa trên các list test case trong bài project 2 và phát triển lên thành web automation testing. Ở bài project 2 em test trên web moodle, Tuy nhiên, vì server yếu, chậm và dễ sập nên em xin phép test trên 2 ứng dụng khác theo như project 2 mà nhóm đã làm, chi tiết ở filr ./docs/Group2-proj3-testcase.xlsm. 
-2 test bao gồm:
+Web automation testing là 1 dự án dựa trên các list test case trong bài project 2 và phát triển lên thành web automation testing. Ở bài project 2 em test trên web moodle. Tuy nhiên, vì server yếu, chậm và dễ sập nên em xin phép test trên 2 ứng dụng khác theo như project 2 mà nhóm đã làm, chi tiết ở file ./docs/Group2-proj3-testcase.xlsm. 
+2 application test bao gồm:
 
 - BMI test: https://www.calculator.net/bmi-calculator.html
 - Body_fat test: https://www.calculator.net/body-fat-calculator.html
@@ -28,8 +28,11 @@ Web automation testing là 1 dự án dựa trên các list test case trong bài
 
 # Yêu cầu cài đặt
 
-OS: Window 10/11
-Anaconda: Để cài đặt thư viện. Nếu đã có anaconda thầy có thể cài python bằng lệnh:
+## OS: Window 10/11
+
+Anaconda: Để cài đặt thư viện. 
+
+Nếu đã có anaconda thầy có thể cài python bằng lệnh:
 - ```conda init```
 - ```conda activate```
 - ```conda create -n auto_test python=3.12.2 -y```
@@ -47,13 +50,14 @@ Thư viện gồm:
 - PyYAML==6.0
 
 Thay đổi đường dẫn trong file config.yaml: 
+    
     driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
 
-OS: Mac
+## OS: Mac
 
-Cũng làm các bước tương tụ như trên, nhưng thầy cần thay đổi đường dẫn trong file config.yaml
-    
-- driver_path: chromedriver-win64/chromedriver-win64/chromedriver.exe
+Cũng làm các bước tương tự như trên, nhưng thầy cần thay đổi đường dẫn trong file config.yaml
+
+    driver_path: chromedriver-mac-x64/chromedriver-mac-x64/chromedriver
 
 Trong trường hợp chrome drive không trùng với bản chrome của thầy
 - Thầy vui lòng tải bản chrome drive tại link https://googlechromelabs.github.io/chrome-for-testing/ cho đúng phiên bản.
@@ -73,12 +77,13 @@ Câu lệnh này sẽ thực hiện chạy test tự động và đưa ra kết 
 # Mô tả phần mềm
 ## Mô tả file config 
 
-File config chứa 
+File config chứa:
+
 - driver_path: Là đường dẫn tương đối đến file chrome driver (driver phải compatible với phiên bản chrome đang sử dụng)
 - BMI_url: https://www.calculator.net/bmi-calculator.html: Là đường dẫn đến trang web để test BMI
-- Body_fat_url: https://www.calculator.net/body-fat-calculator.html: Là đường dẫn đến trang web để test Body fat
 - BMI_test: Chứa các test case cho việc test BMI.
 - TC-001-XXX: Mã cho test case của bài test BMI. Chứa data input và expected output cho test case
+- Body_fat_url: https://www.calculator.net/body-fat-calculator.html: Là đường dẫn đến trang web để test Body fat
 - Body_fat_test: Chứa các test case cho việc test Body fat.
 - TC-002-XXX: Mã cho test case của bài test Body fat. Chứa data input và expected output cho test case
 
@@ -86,23 +91,25 @@ File config chứa
 ## Diễn tả file chạy
 
 File auto_test.py sẽ thực hiện chạy tuần tự như sau:
-Đầu tiên file sẽ mở đường dẫn BMI_url để thực hiện test các test case cho BMI. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết qủa đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
 
-Tiếp theo phần mềm sẽ mở đường dẫn Body_fat_url để thực hiện test các test case cho body fat. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết qủa đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
+Đầu tiên file sẽ mở đường dẫn BMI_url để thực hiện test các test case cho BMI. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết quả đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
 
-Toàn bộ đoạn code được chạy trên python dùng tool Selenium
+Tiếp theo phần mềm sẽ mở đường dẫn Body_fat_url để thực hiện test các test case cho body fat. Phần mềm sẽ tự động nhập hoặc để trống như các input data cho trước, sau khi click vào nút "Calculate" trên trang web thì phần mềm sẽ tiến hành kiểm thử. Kiểm thử sẽ gồm kiểm thử kết quả đúng hay sai, và sai thì có cho ra lỗi trùng khớp với expected output đã cho ở trong file config hay không. Ở command line, phần mềm sẽ hiển thị tên test case, config của test case (gồm input data và expected output)
 
-Đoạn code được chạy tối đa 3 lần thử, phòng trường hợp có sự cố mạng xảy ra. Sau mỗi lần test phần mềm sẽ chờ từ 2 - 5 s để đảm bảo đường link và các thành phần web đã hiển thị nhằm mục đích đảm bảo hoạt động  
+Toàn bộ đoạn code được chạy trên python dùng tool Selenium. Đoạn code được chạy tối đa 3 lần thử, phòng trường hợp có sự cố mạng xảy ra. Sau mỗi lần test phần mềm sẽ chờ từ 2 - 5 giây để đảm bảo đường link và các thành phần web đã hiển thị nhằm mục đích đảm bảo hoạt động tốt
 
 
 # Mô tả test case
 
-Vì lí do bài project 2 em có sử dụng moodle login, và đồng thời server của moodle bị giật lag, không đảm bảo nên em xin phép được làm project 3 sử dụng 2 application tại BMI_url: https://www.calculator.net/bmi-calculator.html cho việc test data ở trang BMI và tại Body_fat_url: https://www.calculator.net/body-fat-calculator.html cho việc test tại trang tính Body Fat
+Vì lí do bài project 2 em có sử dụng moodle login, và đồng thời server của moodle bị giật lag, không đảm bảo nên em xin phép được làm project 3 sử dụng 2 application tại 
+- BMI_url: https://www.calculator.net/bmi-calculator.html cho việc test data ở trang BMI
+- Body_fat_url: https://www.calculator.net/body-fat-calculator.html cho việc test tại trang tính Body Fat
+- 
 Các test case được mô tả chi tiết tại file ./docs/Group2-proj3-testcase.xlsm. 
 
 Ở trang BMI sẽ có tổng cộng 8 test case như sau, nếu trong phần Expected chỉ có bmi_value và status thì test case đó đang test trường hợp thành công và em sẽ so sánh kết quả BMI đó với expected value nằm trong output, Ở các test case có bmi_value == Null và có error là đang test các trường hợp thất bại, lúc này trang web sẽ báo lỗi và em sẽ so sánh lỗi xem có đúng với expected output không:
 
-Ví dụ ở TC-001-001, phần Expected output có bmi_value: 20.8, status: Healthy weight em sẽ kiểm tra kết quả sau khi nhấn nút Calculate có hiện giá trị bmi_value: 20.8 và status: Healthy weight không. Còn ở TC-001-003 phần Expected output có bmi_value: Null và age_error: Please provide an age between 2 and 120. Em sẽ check kết quả sau khi nhấn nút Calculate, trang web có hiển thị lỗi "Please provide an age between 2 and 120" và không hiển thị kết quả BMI hay không
+Ví dụ ở TC-001-001, phần Expected output có bmi_value: 20.8, status: Healthy weight em sẽ kiểm tra kết quả sau khi nhấn nút Calculate có hiện giá trị bmi_value: 20.8 và status: Healthy weight không. Còn ở TC-001-003 phần Expected output có bmi_value: Null và age_error: Please provide an age between 2 and 120. Em sẽ check kết quả sau khi nhấn nút Calculate, trang web có hiển thị lỗi "Please provide an age between 2 and 120" và không hiển thị kết quả BMI hay không.
 
 TC-001-001:
 
@@ -314,7 +321,10 @@ Sau khi chạy file thì các test case đã được thực hiện và cho ra k
 - Trong quá trình thực thi chạy thử nếu có xảy ra vấn đề hãy liên lạc với em thông qua email: chibao24.12.1999@gmail.com
 - Github: https://github.com/mrzaizai2k/software_testing_code
 - Video demo (phòng trường hợp xảy ra sự cố thực thi/ môi trường): Youtube
-- 
+
+# Tài liệu tham khảo 
+
+
 # Tài liệu tham khảo
 - https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
 - https://viblo.asia/p/tim-hieu-testing-web-automation-voi-selenium-webdriver-va-python-Qbq5Q46RlD8
