@@ -163,3 +163,4 @@ cython_debug/
 chromedriver-mac-x64/
 # chromedriver-win64/
 docs/
+*.exe
