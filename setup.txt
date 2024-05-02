@@ -1,4 +1,4 @@
-selenium
-pandas
-numpy
-PyYAML
+selenium==4.19.0
+pandas==1.5.3
+numpy==1.23.5
+PyYAML==6.0
